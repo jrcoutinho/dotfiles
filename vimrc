@@ -5,6 +5,14 @@ set nocompatible
 " ================ Basic Configurations ================
 set number
 
+" mappings
+let mapleader = ","
+inoremap hj <esc>
+inoremap <c-u> <esc>vbUea
+nnoremap <c-u> vbUe
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " ================ Set Backup Directory =============================
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
