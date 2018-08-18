@@ -3,20 +3,23 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
 # General utilities
+brew 'gcc'
 brew 'git'
-brew 'tree'
 brew 'mackup'
 brew 'mas'
+brew 'tmux'
+brew 'tree'
+brew 'vim'
+brew 'zsh'
 
 # Development
-brew 'vim'
-brew 'tmux'
-brew 'sbcl'
-# Add slimv
+brew 'python3'
 
 # Apps
 cask 'dropbox'
-cask 'firefox'
+cask 'icecat'
 cask 'flux'
 cask 'spotify'
-cask 'sublime-text'
+
+# Install Mac App Store apps
+mas 'The Unarchiver', id: 425424353
