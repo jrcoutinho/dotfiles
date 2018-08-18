@@ -20,3 +20,4 @@ else
   set backup		" keep a backup file (restore to previous version)
   set backupdir=~/.vim/tmp,.
   set directory==~/.vim/tmp,.
+endif
