@@ -4,14 +4,20 @@ set nocompatible
 
 " ================ Basic Configurations ================
 set number
+source $VIMRUNTIME/defaults.vim
 
-" mappings
+" general mappings
 let mapleader = ","
 inoremap hj <esc>
 inoremap <c-u> <esc>vbUea
 nnoremap <c-u> vbUe
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" auto-close parenthesis, brackets and braces
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
 
 " ================ Set Backup Directory =============================
 if has("vms")
