@@ -5,22 +5,28 @@ echo "Setting up your Mac..."
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="zshrc vimrc"               # list of files/folders to symlink in homedir
+numsteps=4
 
-##### Check for Homebrew and install if we don't have it
-echo "Step 1/x: Install Homebrew and dependencies listed in the Brewfile"
+##### Install Xcode cli
+echo "Step 1/$numsteps): Install Xcode"
+xcode-select --install
+
+##### Check for Homebrew and install it if it is not found
+echo "Step 2/$numsteps: Install Homebrew and dependencies listed in the Brewfile"
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Update Homebrew recipes
 brew update
+brew upgrade
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
 brew bundle
 
 ##### Create symlinks
-echo "Create symlinks to the repo's dotfiles"
+echo "Step 3/$numsteps: Create symlinks to the repo's dotfiles"
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -36,5 +42,6 @@ for file in $files; do
 done
 
 # Set zsh as default shell
+echo "Step 4/$numsteps: Set zsh as default shell"
 echo "$(which zsh)" | sudo tee -a /etc/shells
 chsh -s $(which zsh)

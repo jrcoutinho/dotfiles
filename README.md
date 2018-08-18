@@ -5,6 +5,5 @@ Based on https://github.com/driesvints/dotfiles
 
 ## Installation
 
-1. `git clone` repo to your root ~/
-2. `cd ~/dotfiles`
-3. `sh install.sh`
+1. Clone this repo to your root: `cd` then `git clone https://github.com/jrcoutinho/dotfiles.git`
+2. Run installation script: `sh ~/dotfiles/install.sh`
