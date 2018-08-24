@@ -17,7 +17,7 @@ brew 'python3'
 
 # Apps
 cask 'dropbox'
-cask 'icecat'
+cask 'firefox'
 cask 'flux'
 cask 'spotify'
 
