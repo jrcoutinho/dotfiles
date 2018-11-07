@@ -12,9 +12,6 @@ brew 'tree'
 brew 'vim'
 brew 'zsh'
 
-# Development
-brew 'python3'
-
 # Apps
 cask 'dropbox'
 cask 'firefox'

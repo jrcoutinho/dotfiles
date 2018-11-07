@@ -3,6 +3,9 @@
 set nocompatible
 
 " ================ Basic Configurations ================
+syntax enable
+filetype plugin on
+
 set number
 source $VIMRUNTIME/defaults.vim
 
@@ -18,6 +21,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+
+" ================ File finder =======================
+set path+=**
+set wildmenu "diplays all matching files when tab-completing
 
 " ================ Set Backup Directory =============================
 if has("vms")
