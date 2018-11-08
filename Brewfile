@@ -2,6 +2,10 @@
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
+# Basic dependencies
+brew 'ruby'
+brew 'python'
+
 # General utilities
 brew 'gcc'
 brew 'git'

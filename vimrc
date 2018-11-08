@@ -2,9 +2,23 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" ================ Vundle Setup ================
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'nvie/vim-flake8'
+let g:flake8_show_in_gutter=1	
+
+call vundle#end()
+filetype plugin on
+
 " ================ Basic Configurations ================
 syntax enable
-filetype plugin on
 
 set number
 source $VIMRUNTIME/defaults.vim

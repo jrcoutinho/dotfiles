@@ -26,12 +26,14 @@ if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Update Homebrew recipes
+# Update Homebrew
 brew update
+
+# Python 3.6.5
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
 brew bundle
 
 ##### Install Python dependencies
@@ -79,6 +81,9 @@ ln -Fs $dir/kitty.conf ~/.config/kitty/kitty.conf
 ##### Configure vim
 mkdir -p ~/.vim/tmp # backup files
 mkdir ~/.vim/bundle # plugins
+
+# Vundle installation
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ##### Set zsh as default shell
 echo "Step $currentstep/$numsteps: Setting zsh as default shell"
